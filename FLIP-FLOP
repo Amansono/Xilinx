@@ -1,0 +1,28 @@
+module flip(Q,S,clk,R);
+input S;
+input clk;
+input R;
+output reg Q;
+always@(posedge clk or posedge R)
+begin
+if(R==1'b1)
+Q<=1'b0;
+else 
+Q<=s;
+end
+endmodule
+
+// TEST BENCH
+
+initial
+begin
+R=1'b1;
+#40;
+R=1'b0;
+#40;
+S=1'b0;
+#40;
+S=1'b1;
+#40;
+end 
+endmodule
