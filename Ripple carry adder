@@ -2,7 +2,7 @@ module rca(
 input[7:0] a,
 input[7:0] b,
 input cin,
-input[7:0] sum,
+output[7:0] sum,
 output cout
 );
 
