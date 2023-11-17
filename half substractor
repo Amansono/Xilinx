@@ -1,1 +1,29 @@
+module hs(
+input a,
+input b,
+output sum,
+output c
+);
+assign sum=a^b;
+assign c=~a&b;
+endmodule
+//TEST BENCH
 
+wire sum;
+wire c;
+hs uut(
+.a(a),
+.b(b),
+.sum(sum),
+.c(c),
+);
+initial begin
+a=0;b=0;
+#100;
+a=0;b=1;
+#100;
+a=1;b=0;
+#100;
+a=1;b=1;
+#100;
+end
