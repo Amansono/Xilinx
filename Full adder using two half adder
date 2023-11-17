@@ -1,1 +1,34 @@
+module fa_ha(
+input a,
+input b,
+input cin,
+output sum,
+output cout
+);
+wire T1,T2,T3;
+ha ha1(a,b,T1,T2);
+ha ha2(T1,cin,sum,T3);
+assign cout=T1|T2;
+endmodule
+
+//test bench
+initial begin 
+a=0;b=0;cin=0;
+#100;
+a=0;b=0;cin=1;
+#100;
+a=0;b=1;cin=0;
+#100;
+a=0;b=1;cin=1;
+#100;
+a=1;b=0;cin=0;
+#100;
+a=1;b=0;cin=1;
+#100;
+a=1;b=1;cin=0;
+#100;
+a=1;b=1;cin=1;
+#100;
+end
+endmodule
 
