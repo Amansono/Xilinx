@@ -1,1 +1,17 @@
-
+module full_adderrr(
+input a,
+input b,
+input cin,
+output ans,
+output carry
+);
+assign ans=a^b^cin;
+assign carry=(a&b)|(b&cin)|(cin&a);
+endmodule
+module adder_subtractor(
+input[7:0] a,
+input[7:0] b,
+input cin,
+output[7:0] ans,
+output carry
+);
