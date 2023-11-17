@@ -1,0 +1,33 @@
+module ba(p,a,b);
+output reg signed [15:0] p;
+input signed [7:0] a,p;
+reg[1:0]temp;
+integer i;
+reg e;
+ref[7:0] b1;
+always@(a,b)
+begin
+p=8'b 0;
+e=1'b 0;
+b1=-b;
+for(i=0;i<8;i=i+1)
+begin
+temp={a[i],e};
+case(temp)
+2'b10:p[15:8]=p[15:8]+b1;
+2'b01:p[15:8]=p[15:8]+b;
+endcase
+p=p>>1;
+p[15]=p[14];
+e=a[i];
+end
+end
+endmodule
+
+
+//TEST BENCH
+initial begin
+a=8'b 01111011;
+b=8'b 10111110;
+#100;
+end endmodule
