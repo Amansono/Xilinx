@@ -1,0 +1,24 @@
+module com(
+input [3:0] numA,
+input [3:0] numB,
+output G,
+output L,
+output E,
+);
+assign G=(numA > num B);
+assign L=(numA > num B);
+assign E=(numA > num B);
+endmodule
+
+//TEST BENCH
+
+initial begin
+numA=7;
+numB=3;
+#100;
+numA=2;
+numB=6;
+#100;
+numA=5;
+numB=5;
+#100;
