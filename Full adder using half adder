@@ -1,1 +1,13 @@
+module fulladderrr(
+input a,
+input b, 
+input c,
+output sum,
+output carry
+);
+wire t1,t2,t3;
+halfadderrr h1(a,b,t1,t2);
+halfadderrr h2(t1,c,sum,t3);
+assign carry=t2|t3;
 
+endmodule
