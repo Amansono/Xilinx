@@ -1,1 +1,47 @@
+module slsr(sl,sr,din,clk,reset,q);
+input sl,sr,din,clk,reset;
+output[7:0] q;
+reg [7:0] q;
+always@(posedge clk)begin
+if(~reset)begin
+if(sl)begin
+q<=#2{q[6:0],din};
+end
+end
+end
+always@(posedge reset )begin 
+q<=8'b00000000;
+end 
+endmodule
 
+//TEST BENCH
+
+initial begin
+reset =1;
+#12
+reset=0;
+#90
+reset=1;
+#12
+reset=0;
+end
+
+initial begin
+sl=1;
+sr=0;
+#50
+sl=0;
+#12
+sr+1;
+end
+
+initial begin
+forever begin
+din=0;
+#7
+din=1;
+#8
+din=0;
+end
+end
+endmodule
