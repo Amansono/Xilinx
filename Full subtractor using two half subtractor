@@ -1,1 +1,37 @@
+module fs_hs(
+input a,
+input b,
+input cin,
+output sum,
+output cout
+);
+hs hs1(a,b,T1,T2);
+hs hs2(  T1,cin.sum,T3);
+assign cout=T2|T3;
+endmodule
+
+//test bench
+
+initial begin
+a=0;b=0;cin=0;
+#100;
+a=0;b=0;cin=1;
+#100;
+a=0;b=1;cin=0;
+#100;
+a=0;b=1;cin=1;
+#100;
+a=1;b=0;cin=0;
+#100;
+a=1;b=0;cin=1;
+#100;
+a=1;b=1;cin=0;
+#100;
+a=1;b=1;cin=1;
+#100;
+end
+endmodule
+
+
+
 
