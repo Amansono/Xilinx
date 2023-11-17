@@ -1,0 +1,50 @@
+module mux_4(
+output out,
+input d0,
+input d1,
+input d2,
+input d3,
+input [1:0]s1
+);
+reg out;
+always@*
+begin 
+case(s1)
+2'b00:out=d0;
+2'b01:out=d1;
+2'b10:out=d2;
+2'b11:out=d3;
+endcase
+end 
+endmodule
+
+//TEST BENCH
+
+initial begin
+d0=1;
+d1=0;
+d2=0;
+d3=0;
+s1=2'b00;
+#100;
+
+d0=0;
+d1=1;
+d2=0;
+d3=0;
+s1=2'b01;
+#100;
+
+d0=0;
+d1=0;
+d2=1;
+d3=0;
+s1=2'b10;
+#100;
+
+d0=0;
+d1=0;
+d2=0;
+d3=1;
+s1=2'b11;
+#100;
