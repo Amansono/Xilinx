@@ -1,0 +1,1 @@
+This repository hosts diverse implementations covering digital circuits and algorithms topics such as FLIP-FLOP, BOOTH'S ALGORITHM, DIVISION ALGORITHM, Full Adder, and Multiplexer. Additionally, it includes a file named "subtractor" with a Xilinx description, indicating relevance to FPGA or digital design associated with Xilinx technology.
